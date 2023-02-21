@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <meta charset=utf-8>
+    <meta name="robots" content="all">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sidebar</title>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,6 +66,18 @@
             height: 10%;
         }
 
+        .header2 {
+            top: 0%;
+            position: fixed;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            max-width: 100%;
+            height: 10%;
+        }
+
+        
+
         .text {
             font-family: textFont;
             font-size: 18px;
@@ -99,14 +118,14 @@
         .pauze {
             font-family: timeFont;
             font-size: 21px;
-            top: 807px;
+            top: 845px;
         }
 
         .mt {
             color: black;
             font-family: timeFont;
             font-size: 18px;
-            top: 852px;
+            top: 890px;
         }
 
         .ht {
@@ -116,12 +135,16 @@
             font-size: 18px;
             top: 130%;
         }
+    
 
     </style>
 
     <header id="page-head">
+
         <img src="header.png" class="header">
+        <img src="boven.jpeg" class="header2">
         <div class="text ht">Leerlingenkaart</div>
+
     </header>
        
     <main id="page-main">
@@ -135,11 +158,12 @@
         <div class="text mt">Middagtoelating</div>
     </main>
 
-    <body onload="startTime()">        
+    
+    <body onload="startTime()">  
         <div id="time"></div>
         
-    <script> //klok functie
-    
+    <script> 
+
     function startTime() {
         const today = new Date();
         let h = today.getHours();
@@ -156,7 +180,6 @@
         return i;
     }
     </script>
-        
-        </body>
-</body>
+    
+
 </html>

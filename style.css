@@ -1,0 +1,39 @@
+#side-nav{
+    height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    font-size: 20px;
+    margin-top: 5%;
+
+}
+
+.closebtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+
+}
+
+.open-btn{
+    border: none;
+    padding: 12px 30px;
+    background-color: aqua;
+    color: white;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+}
