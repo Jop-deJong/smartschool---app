@@ -128,29 +128,35 @@
         <img src="smartschool.png" class="bg">
         <div class="text name">Jop de Jong</div>
         <div class="text klas">6IICT</div>
-        <div class="text bdate">GEBOORTEDATUM: 5 FEBRUARI 2005</div>
+        <div class="text bdate">GEBOORTEDATUM: 3 FEBRUARI 2005</div>
         <div class="text date">vrijdag 23 september</div>
         <div class="text time" id="time">12:00:00</div>
         <div class="text pauze">PAUZE</div>
         <div class="text mt">Middagtoelating</div>
     </main>
 
-    <script>
-        const time = document.querySelector(".time");
-        let date = new Date();
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let seconds = date.getSeconds();
+    <body onload="startTime()">        
+        <div id="time"></div>
         
-        if (seconds < 10){
-            seconds = '0' + seconds;
-        }
-        if (hours < 10){
-            hours = '0' + hours;
-        }
-
-        time.textContent = hours + ":" + minutes + ":" + seconds;
-
+    <script> //klok functie
+    
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+        
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
     </script>
+        
+        </body>
 </body>
 </html>
