@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @font-face {
+        font-family: textFont;
+        src: url(EpocaPro-Light.otf);
+        }
+
+        @font-face {
+        font-family: timeFont;
+        src: url(EpocaPro-Regular.otf);
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #page-head {
+            position: fixed;
+            top: 0;
+            z-index: 9;
+            width: 100%;
+            height: 30px;
+            padding: 10px;
+        }
+
+        #page-main {
+            margin-top: 70px;
+        }
+
+        .bg {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -100vw;
+            max-width: 100%;
+            width: 100%;     
+            height: 100%;   
+        }
+
+        .header {
+            top: 0%;
+            position: fixed;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -100vw;
+            max-width: 100%;
+            width: 100%;        
+            height: 10%;
+        }
+
+        .text {
+            font-family: textFont;
+            font-size: 18px;
+            color: #858585;
+            position: absolute;
+            top: 757px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .time {
+            font-family: timeFont;
+            color: #CD2D1F;
+            top: 757px;
+        }
+
+        .date {
+            top: 720px;
+        }
+
+        .bdate {
+            font-size: 11px;
+            top: 440px;
+        }
+
+        .klas {
+            top: 405px;
+        }
+
+        .name {
+            color: black;
+            font-family: timeFont;
+            letter-spacing: 1px;
+            font-size: 20px;
+            top: 370px;
+        }
+
+        .pauze {
+            font-family: timeFont;
+            font-size: 21px;
+            top: 807px;
+        }
+
+        .mt {
+            color: black;
+            font-family: timeFont;
+            font-size: 18px;
+            top: 852px;
+        }
+
+        .ht {
+            font-family: timeFont;
+            color: white;
+            letter-spacing: 1px;
+            font-size: 18px;
+            top: 130%;
+        }
+
+    </style>
+
+    <header id="page-head">
+        <img src="header.png" class="header">
+        <div class="text ht">Leerlingenkaart</div>
+    </header>
+       
+    <main id="page-main">
+        <img src="smartschool.png" class="bg">
+        <div class="text name">Jop de Jong</div>
+        <div class="text klas">6IICT</div>
+        <div class="text bdate">GEBOORTEDATUM: 5 FEBRUARI 2005</div>
+        <div class="text date">vrijdag 23 september</div>
+        <div class="text time" id="time">12:00:00</div>
+        <div class="text pauze">PAUZE</div>
+        <div class="text mt">Middagtoelating</div>
+    </main>
+
+    <script>
+        const time = document.querySelector(".time");
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        
+        if (seconds < 10){
+            seconds = '0' + seconds;
+        }
+        if (hours < 10){
+            hours = '0' + hours;
+        }
+
+        time.textContent = hours + ":" + minutes + ":" + seconds;
+
+    </script>
+</body>
+</html>
